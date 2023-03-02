@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "-----------------------------------------------------------------------------"
-curl -s https://github.com/fromIziDAO/things/blob/main/logo.sh | bash
+curl -s https://raw.githubusercontent.com/fromIziDAO/things/main/logo.sh| bash
 echo "-----------------------------------------------------------------------------"
 if [ -z $NODENAME_GEAR ]; then
         read -p "Введите ваше имя ноды (только буквы): " NODENAME_GEAR
