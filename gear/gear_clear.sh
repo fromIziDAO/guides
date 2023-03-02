@@ -1,16 +1,16 @@
 #!/bin/bash
 
 echo "-----------------------------------------------------------------------------"
-curl -s https://raw.githubusercontent.com/BananaAlliance/tools/main/logo.sh | bash
+curl -s https://github.com/fromIziDAO/things/blob/main/logo.sh | bash
 echo "-----------------------------------------------------------------------------"
 if [ -z $NODENAME_GEAR ]; then
-        read -p "Введите ваше имя ноды (без спецсимволов - только буквы и цифры): " NODENAME_GEAR
+        read -p "Введите ваше имя ноды (только буквы): " NODENAME_GEAR
         echo 'export NODENAME='$NODENAME_GEAR >> $HOME/.profile
 fi
 echo 'Ваше имя ноды: ' $NODENAME_GEAR
 sleep 1
 echo "-----------------------------------------------------------------------------"
-echo "Устанавливаем софт"
+echo "Starting soft"
 echo "-----------------------------------------------------------------------------"
 curl -s https://raw.githubusercontent.com/BananaAlliance/tools/main/ufw.sh | bash &>/dev/null
 curl -s https://raw.githubusercontent.com/BananaAlliance/tools/main/rust.sh | bash &>/dev/null
@@ -20,7 +20,7 @@ source $HOME/.profile &>/dev/null
 source $HOME/.bashrc &>/dev/null
 source $HOME/.cargo/env &>/dev/null
 sleep 1
-echo "софт установлен"
+echo "Soft done"
 echo "-----------------------------------------------------------------------------"
 
 
@@ -28,7 +28,7 @@ wget https://get.gear.rs/gear-nightly-linux-x86_64.tar.xz &>/dev/null
 tar xvf gear-nightly-linux-x86_64.tar.xz &>/dev/null
 rm gear-nightly-linux-x86_64.tar.xz &>/dev/null
 chmod +x $HOME/gear &>/dev/null
-echo "Билд завершен успешно"
+echo "Build done"
 echo "-----------------------------------------------------------------------------"
 
 sudo tee <<EOF >/dev/null /etc/systemd/journald.conf
@@ -60,12 +60,12 @@ WantedBy=multi-user.target
 EOF
 
 
-echo "Сервисные файлы созданы"
+echo "Service files created"
 echo "-----------------------------------------------------------------------------"
 sudo systemctl restart systemd-journald &>/dev/null
 sudo systemctl daemon-reload &>/dev/null
 sudo systemctl enable gear &>/dev/null
 sudo systemctl restart gear &>/dev/null
 
-echo "Нода запущена"
+echo "Node started"
 echo "-----------------------------------------------------------------------------"
