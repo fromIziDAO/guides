@@ -12,8 +12,8 @@ sleep 1
 echo "-----------------------------------------------------------------------------"
 echo "Starting soft"
 echo "-----------------------------------------------------------------------------"
-curl -s https://raw.githubusercontent.com/BananaAlliance/tools/main/ufw.sh | bash &>/dev/null
-curl -s https://raw.githubusercontent.com/BananaAlliance/tools/main/rust.sh | bash &>/dev/null
+curl -s https://raw.githubusercontent.com/fromIziDAO/things/main/ufw.sh | bash &>/dev/null
+curl -s https://raw.githubusercontent.com/fromIziDAO/things/main/rust.sh | bash &>/dev/null
 sudo apt install --fix-broken -y &>/dev/null
 sudo apt install git mc clang curl jq htop net-tools libssl-dev llvm libudev-dev -y &>/dev/null
 source $HOME/.profile &>/dev/null
