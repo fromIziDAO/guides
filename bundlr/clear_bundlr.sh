@@ -1,17 +1,17 @@
 #!/bin/bash
 
 echo "-----------------------------------------------------------------------------"
-curl -s https://raw.githubusercontent.com/BananaAlliance/tools/main/logo.sh | bash
+curl -s https://raw.githubusercontent.com/fromIziDAO/things/main/logo.sh | bash
 echo "-----------------------------------------------------------------------------"
 sleep 1
-echo "Packing soft"
+echo "Starting soft"
 echo "-----------------------------------------------------------------------------"
 sleep 1
 sudo apt update && sudo apt install curl -y &>/dev/null
 sudo apt-get install curl wget jq libpq-dev libssl-dev build-essential pkg-config openssl ocl-icd-opencl-dev libopencl-clang-dev libgomp1 -y &>/dev/null
-curl -s https://raw.githubusercontent.com/BananaAlliance/tools/main/rust.sh | bash &>/dev/null
-curl -s https://raw.githubusercontent.com/BananaAlliance/tools/main/node.sh | bash &>/dev/null
-curl -s https://raw.githubusercontent.com/BananaAlliance/tools/main/docker.sh | bash &>/dev/null
+curl -s https://raw.githubusercontent.com/fromIziDAO/things/main/rust.sh | bash &>/dev/null
+curl -s https://raw.githubusercontent.com/fromIziDAO/things/main/node.sh | bash &>/dev/null
+curl -s https://raw.githubusercontent.com/fromIziDAO/things/main/docker.sh | bash &>/dev/null
 source $HOME/.profile
 source "$HOME/.cargo/env"
 mkdir $HOME/bundlr
